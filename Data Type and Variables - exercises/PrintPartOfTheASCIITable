@@ -1,0 +1,19 @@
+package Homework;
+
+import java.util.Scanner;
+
+public class PrintPartOfASCIITable {
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+        // from int --> char
+
+        int start = Integer.parseInt(in.nextLine());
+        int end = Integer.parseInt(in.nextLine());
+        for (int i = start; i <= end; i++) {
+            char symbol = (char) i;
+            System.out.print(symbol + " ");
+
+        }
+    }
+}
