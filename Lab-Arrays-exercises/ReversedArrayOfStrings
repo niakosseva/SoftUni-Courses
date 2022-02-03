@@ -1,0 +1,18 @@
+package Lab;
+
+import java.util.Scanner;
+
+public class ReversedArrayOfStrings {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        String inputLine = scanner.nextLine();
+        String[] letters = inputLine.split(" ");
+        for (int i = 0; i < letters.length / 2; i++) {
+            String previousLetter = letters[i];
+            letters[i] = letters[letters.length - 1 - i];
+            letters[letters.length - 1 - i] = previousLetter;
+        }
+        System.out.println(String.join(" ", letters));
+    }
+}
