@@ -1,0 +1,65 @@
+package BasicSyntax;
+
+import java.util.Scanner;
+
+public class Vacation {
+    public static void main(String[] args) {
+        Scanner scr = new Scanner(System.in);
+        int groupNumber = Integer.parseInt(scr.nextLine());
+        String typeGroup = scr.nextLine();
+        String day = scr.nextLine();
+
+        double totalPrice = 0.0;
+
+        switch (day) {
+            case "Friday":
+                switch (typeGroup) {
+                    case "Students" -> totalPrice = 8.45;
+                    case "Business" -> totalPrice = 10.90;
+                    case "Regular" -> totalPrice = 15;
+                }
+                break;
+            case "Saturday":
+                totalPrice = switch (typeGroup) {
+                    case "Students" -> 9.80;
+                    case "Business" -> 15.60;
+                    case "Regular" -> 20;
+                    default -> totalPrice;
+                };
+                break;
+            case "Sunday":
+                totalPrice = switch (typeGroup) {
+                    case "Students" -> 10.46;
+                    case "Business" -> 16;
+                    case "Regular" -> 22.50;
+                    default -> totalPrice;
+                };
+                break;
+        }
+        double finalSum = groupNumber * totalPrice;
+
+        switch (typeGroup) {
+            case "Students":
+                if (groupNumber >= 30) {
+                    finalSum *= 0.85;
+                } else {
+                    finalSum = groupNumber * totalPrice;
+                }
+                break;
+            case "Business":
+                if (groupNumber >= 100) {
+                    finalSum = (groupNumber - 10) * totalPrice;
+                } else {
+                    finalSum = groupNumber * totalPrice;
+                }
+                break;
+            case "Regular":
+                if (groupNumber >= 10 && groupNumber <= 20) {
+                    finalSum *= 0.95;
+
+                }
+                break;
+        }
+        System.out.printf("Total price: %.2f", finalSum);
+    }
+}
