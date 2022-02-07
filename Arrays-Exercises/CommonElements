@@ -1,0 +1,21 @@
+package ArrayExercises;
+
+import java.util.Scanner;
+
+public class CommonElements {
+    public static void main(String[] args) {
+        Scanner scr = new Scanner(System.in);
+        String[] firstArray = scr.nextLine().split(" ");
+        String[] secondArray = scr.nextLine().split(" ");
+
+        for (int i = 0; i < secondArray.length; i++) {
+            String secondElement = secondArray[i];
+            for (String firstElement : firstArray) {
+                if (secondElement.equals(firstElement)) {
+                    System.out.print(firstElement + " ");
+                }
+            }
+        }
+    }
+}
+
