@@ -1,0 +1,25 @@
+package Homework;
+
+
+import java.util.Scanner;
+
+public class Train {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // String wagons = scanner.nextLine();
+        int wagons = Integer.parseInt(scanner.nextLine());
+        int[] passengers = new int[wagons];
+        int sum = 0;
+
+        for (int i = 0; i < passengers.length; i++) {
+            passengers[i] = Integer.parseInt(scanner.nextLine());
+            sum += passengers[i];
+            System.out.print(passengers[i] + " ");
+
+        }
+        System.out.printf("\n%s", sum);
+
+    }
+}
